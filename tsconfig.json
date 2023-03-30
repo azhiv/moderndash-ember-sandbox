@@ -1,0 +1,29 @@
+{
+  "extends": "@tsconfig/ember/tsconfig.json",
+  "compilerOptions": {
+    "target": "ES2021",
+    "module": "ES2020",
+    "lib": ["ES2020", "DOM"],
+
+    // The combination of `baseUrl` with `paths` allows Ember's classic package
+    // layout, which is not resolvable with the Node resolution algorithm, to
+    // work with TypeScript.
+    "baseUrl": ".",
+    "paths": {
+      "moderndash-ember-sandbox/tests/*": [
+        "tests/*"
+      ],
+      "moderndash-ember-sandbox/*": [
+        "app/*"
+      ],
+      "*": [
+        "types/*"
+      ]
+    }
+  },
+  "include": [
+    "app/**/*",
+    "tests/**/*",
+    "types/**/*"
+  ]
+}
